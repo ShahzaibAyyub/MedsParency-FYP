@@ -17,12 +17,58 @@ docker ps
 docker network inspect net_test
 ```
 
-#### To monitor the network using logspout
+* #### To monitor the network using logspout
 ```
 cd fabric-samples/medsparencyjs/organization/pharmacy
 ./configuration/cli/monitordocker.sh net_test
 ```
-* Now your react app will start running on port 3000, that takes menu from your node app already running
-End with an example of getting some data out of the system or using it for a little demo
 
-### Feel free to use this Food App and make changes as you wish. Thanks and Happy Coding!
+* #### Deploying the smart contract to the channel as Pharmacy
+```
+cd fabric-samples/medsparencyjs/organization/pharmacy
+source pharmacy.sh
+peer lifecycle chaincode package cp.tar.gz --lang node --path ./contract --label cp_0
+peer lifecycle chaincode install cp.tar.gz
+peer lifecycle chaincode queryinstalled
+export PACKAGE_ID=cp_0:ffda93e26b183e231b7e9d5051e1ee7ca47fbf24f00a8376ec54120b1a2a335c
+
+peer lifecycle chaincode approveformyorg --orderer localhost:7050 --ordererTLSHostnameOverride orderer.example.com --channelID mychannel --name papercontract -v 0 --package-id $PACKAGE_ID --sequence 1 --tls --cafile $ORDERER_CA
+```
+
+* #### Deploying the smart contract to the channel as Pharmacy2
+```
+cd fabric-samples/medsparencyjs/organization/pharmacy2
+source pharmacy2.sh
+peer lifecycle chaincode package cp.tar.gz --lang node --path ./contract --label cp_0
+peer lifecycle chaincode install cp.tar.gz
+peer lifecycle chaincode queryinstalled
+export PACKAGE_ID=cp_0:ffda93e26b183e231b7e9d5051e1ee7ca47fbf24f00a8376ec54120b1a2a335c
+
+peer lifecycle chaincode approveformyorg --orderer localhost:7050 --ordererTLSHostnameOverride orderer.example.com --channelID mychannel --name papercontract -v 0 --package-id $PACKAGE_ID --sequence 1 --tls --cafile $ORDERER_CA
+```
+
+* #### Commit the chaincode definition to the channel
+```
+peer lifecycle chaincode commit -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --peerAddresses localhost:7051 --tlsRootCertFiles ${PEER0_ORG1_CA} --peerAddresses localhost:9051 --tlsRootCertFiles ${PEER0_ORG2_CA} --channelID mychannel --name papercontract -v 0 --sequence 1 --tls --cafile $ORDERER_CA --waitForEvent
+
+docker ps
+```
+
+* #### Application dependencies
+```
+cd fabric-samples/medsparencyjs/organization/pharmacy/application/
+npm install
+```
+
+* #### Wallet
+```
+node enrollUser.js
+ls ../identity/user/isabella/wallet/
+```
+
+* #### Use the application (CreateDrug)
+```
+node CreateDrug.js 1 Panadol
+node ReadDrug.js 1
+```
+
