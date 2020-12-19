@@ -3,7 +3,12 @@ Permissioned Blockchain on Hyperledger Fabric 2.2, Javascript, Go, Node.js, Reac
 
 ### Prerequisites
 
-You need to have Ubuntu 20.04, Hyperledger 2.2, Go, Node, Npm already installed
+You need to have the following already installed:
+* Ubuntu 20.04
+* Hyperledger 2.2
+* Go
+* Node
+* Npm
 
 
 ### How to Run the project
