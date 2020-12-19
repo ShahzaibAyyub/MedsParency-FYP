@@ -9,7 +9,7 @@ You need to have Ubuntu 20.04, Hyperledger 2.2, Go, Node, Npm already installed
 ### How to Run the project
 After downloading the project, go to the project directory in own Command line Interface (CLI)
 
-#### Network Creation
+* #### Network Creation
 ```
 cd fabric-samples/medsparencyjs
 ./network-starter.sh
