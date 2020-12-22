@@ -1,0 +1,129 @@
+// Make sure to have the file "_variables.scss" at path "assets/sass/abstracts/"
+@import "../../assets/sass/abstracts/variables";
+
+// Default variables to set styles for User Account Form
+$error-color:                   #dc3545 !default;
+
+$btn-color:                     #212529 !default;
+$btn-bg:                        #f1f1f1 !default;
+$btn-focus-border-color:        $btn-color !default;
+$btn-primary-color:             #fff !default;
+$btn-primary-bg:                #0060c7 !default;
+
+.two-columns {
+    display: flex;
+    margin: 0 -15px;
+
+    .col {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
+
+#accountSettings {
+    margin-bottom: 50px;
+
+    .tab-content {
+        padding: 10px 30px 15px;
+
+        .form-group {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            label {
+                font-weight: bold;
+                align-self: auto;
+                flex: 0 0 250px;
+            }
+
+            [class*='col-'] {
+                flex: 0 0 calc(100% - 350px);
+            }
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 700;
+    color: $btn-color;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background: $btn-bg;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 4px;
+    -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -o-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    &:focus {
+        outline: none;
+        border-color: $btn-focus-border-color;
+        box-shadow: 0 0 0 3px rgba($btn-focus-border-color, .2);
+    }
+
+    &:hover {
+        background: darken($btn-bg, 5%);
+    }
+
+    &-lg {
+        padding: 12px 22px;
+        border-radius: 6px;
+    }
+
+    &-primary {
+        background: $btn-primary-bg;
+        color: $btn-primary-color;
+
+        &:focus {
+            border-color: $btn-primary-bg;
+            box-shadow: 0 0 0 3px rgba($btn-primary-bg, .2);
+        }
+
+        &:hover {
+            background: darken($btn-primary-bg, 5%);
+            color: $btn-primary-color;
+        }
+    }
+
+    &-link {
+        background: transparent;
+
+        &:focus {
+            border-color: transparent;
+            box-shadow: 0 0 0 3px rgba($btn-primary-bg, .2);
+        }
+
+        &:hover {
+            background: transparent;
+            color: $btn-primary-bg;
+        }
+    }
+}
+
+.site-logo {
+    width: 150px;
+    height: auto;
+}
+
+.profile-image {
+    width: 150px;
+    height: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.required {
+    color: $error-color;
+    font-size: 13px;
+}

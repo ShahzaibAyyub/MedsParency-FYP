@@ -1,0 +1,10 @@
+{
+  "BASE_URL": "http://localhost:8080/",
+  "API_ENDPOINTS": {
+    "FETCH_PRODUCTS": "list-products/",
+    "STORE_PRODUCTS": "store-product",
+    "PURCHASE_PRODUCT": "buy-product",
+    "REVIEW_PRODUCT": "review-product",
+    "FETCH_USER": "get-user/"
+  }
+}
