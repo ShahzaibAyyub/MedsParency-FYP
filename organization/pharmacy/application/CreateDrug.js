@@ -1,5 +1,4 @@
-//Taken help from: https://hyperledger-fabric.readthedocs.io/en/release-2.2/tutorial/commercial_paper.html
-
+//Reference: https://hyperledger-fabric.readthedocs.io/en/release-2.2/tutorial/commercial_paper.html
 'use strict';
 
 // Bring key classes into scope, most importantly Fabric SDK network class
@@ -39,19 +38,19 @@ async function main() {
 
         await gateway.connect(connectionProfile, connectionOptions);
 
-        // Access PaperNet network
+        // Access drug network
         console.log('Use network channel: mychannel.');
 
         const network = await gateway.getNetwork('mychannel');
 
-        // Get addressability to commercial paper contract
+        // Get addressability to drug contract
         console.log('Use org.papernet.commercialpaper smart contract.');
 
         const contract = await network.getContract('papercontract');
 
-        // issue commercial paper
-        console.log('Submit commercial paper issue transaction.');
-
+       
+        console.log('Submit Add Drug transaction.');
+        //Adds Drug Details
         const createDrugResponse = await contract.submitTransaction('CreateDrug', '4', 'ORS');
 
         // process response
