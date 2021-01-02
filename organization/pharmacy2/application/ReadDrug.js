@@ -1,18 +1,4 @@
-/*
- * Copyright IBM Corp. All Rights Reserved.
- *
- * SPDX-License-Identifier: Apache-2.0
-*/
-
-/*
- * This application has 6 basic steps:
- * 1. Select an identity from a wallet
- * 2. Connect to network gateway
- * 3. Access PaperNet network
- * 4. Construct request to issue commercial paper
- * 5. Submit transaction
- * 6. Process response
- */
+//Reference: https://hyperledger-fabric.readthedocs.io/en/release-2.2/tutorial/commercial_paper.html
 
 'use strict';
 
@@ -58,17 +44,17 @@ async function main() {
 
         await gateway.connect(connectionProfile, connectionOptions);
 
-        // Access PaperNet network
+        // Access drug network
         console.log('Using the Network Channel: mychannel.');
 
         const network = await gateway.getNetwork('mychannel');
 
-        // Get addressability to commercial paper contract
+        // Get addressability to drug contract
         console.log('Using Drug Contract Smart Contract');
 
         const contract = await network.getContract('papercontract');
 
-        // issue commercial paper
+        // add drug contract
         console.log('ReadDrug Transaction');
 
         let result = await contract.submitTransaction('ReadDrug', args[2]);
