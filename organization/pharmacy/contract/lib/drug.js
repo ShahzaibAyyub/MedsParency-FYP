@@ -1,4 +1,4 @@
-//Taken help from: https://hyperledger-fabric.readthedocs.io/en/release-2.2/tutorial/commercial_paper.html
+//Reference: https://hyperledger-fabric.readthedocs.io/en/release-2.2/tutorial/commercial_paper.html
 
 
 'use strict';
@@ -9,7 +9,7 @@ const State = require('./../ledger-api/state.js');
 
 /**
  *  class extends State class
- * Class will be used by application and smart contract to define a paper
+ * Class will be used by application and smart contract to define a drug
  */
 class Drug extends State {
 
@@ -46,7 +46,7 @@ class Drug extends State {
     }
 
     /**
-     * Deserialize a state data to commercial paper
+     * Deserialize a state data to drug
      * @param {Buffer} data to form back into the object
      */
     static deserialize(data) {
