@@ -1,5 +1,4 @@
 //Reference: https://hyperledger-fabric.readthedocs.io/en/release-2.2/tutorial/commercial_paper.html
-
 'use strict';
 
 // Fabric smart contract classes
@@ -7,7 +6,7 @@ const { Contract, Context } = require('fabric-contract-api');
 
 class DrugContract extends Contract {
 
-    // Adds raw material details into a new drug to the world state with given details.
+    // AddRawMaterial adds raw material details to the world state with given details.
     async AddRawMaterial(ctx, id, name, rawmaterialname, rawmaterialquantity, source) {
         const drug = {
             ID: id,
@@ -25,7 +24,7 @@ class DrugContract extends Contract {
         return JSON.stringify(drug);
     }
 
-    // Reads the drug details stored in the world state with given id.
+    // ReadDrug returns the drug stored in the world state with given id.
     async ReadDrug(ctx, id) {
         const drugJSON = await ctx.stub.getState(id); // get the asset from chaincode state
         if (!drugJSON || drugJSON.length === 0) {
@@ -34,7 +33,7 @@ class DrugContract extends Contract {
         return drugJSON.toString();
     }
 
-    // Adds Manufacturing Details into an existing drug in the world state with provided parameters.
+    // AddManufacturingDetails adds manufacturing details of the drug in an existing drug in the world state with provided parameters.
     async AddManufacturingDetails(ctx, id, name, rawmaterialusedname, rawmaterialusedquantity) {
         
         const drugJSON = await ctx.stub.getState(id); // get the asset from chaincode state
@@ -44,7 +43,7 @@ class DrugContract extends Contract {
 
         const drug = JSON.parse(drugJSON);
 
-        // overwriting original drug with new drug
+        // overwriting original asset with new asset
         const updatedDrug = {
             ID: id,
             Name: name,
@@ -60,7 +59,8 @@ class DrugContract extends Contract {
         return ctx.stub.putState(id, Buffer.from(JSON.stringify(updatedDrug)));
     }
 
-    //Adds packaging details into an already existing drug 
+    // AddPackagingDetails adds packaging details of the drug in an existing drug in the world state with provided parameters.
+
     async AddPackagingDetails(ctx, id, name, manufactureddate, expirydate, price) {
         
         const drugJSON = await ctx.stub.getState(id); // get the asset from chaincode state

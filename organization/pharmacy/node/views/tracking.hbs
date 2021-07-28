@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Track Drug</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../public/style.css">
+
+</head>
+
+
+
+<body>
+
+
+
+<nav class="navbar navbar-expand navbar-dark bg-success fixed-top" aria-label="Second navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4" href="http://localhost:3000/Index">MedsParency</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02"
+        aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000/RawMaterial">Raw Material</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000/ManufacturingDetails">Manufacturing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000/QualityAssurance">Packaging</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="http://localhost:3000/tracking">Tracking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000/Customer">Customer Page</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+<div class="pricing-header pt-5 p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Track Drug Details</h1>
+    <p class="fs-5 text-muted">Check the Current Supply Chain position of the Drug</p>
+  </div>
+
+
+    
+
+        <div class="container ">
+
+          <form id="formContainer" class=" form-inline justify-content-center">
+            <input  id="drug" class="form-group form-control-lg col-md-4 col-md-offset-5 align-center " placeholder="Enter Drug ID Here" >
+              <button type="submit" class="btn btn-lg btn-success">Track Drug</button>
+          </form>
+      <div class="card-deck mb-3 text-center pt-4">
+        <div class="card mb-4 border-success">
+          
+
+          <div class="card-header text-white bg-success border-success">
+            <h4 class="my-0 font-weight-normal">Raw Materials</h4>
+          </div>
+          <div class="card-body">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="../public/1.png" role="img"  preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+
+            <h3 class="my-3" ><b>Raw Material Details</b></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li style="font-size:22px"><p id="message1"></p></li>
+              <li style="font-size:22px"><p id="message2"></p></li>
+              <li style="font-size:22px" ><p id="message3"></p></li>
+              <li style="font-size:22px"><p id="message4"></p></li>
+              <li style="font-size:22px"><p id="message5"></p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card mb-4 border-success">
+          <div class="card-header text-white bg-success border-success">
+            <h4 class="my-0 font-weight-normal">Manufacturing Details</h4>
+          </div>
+          <div class="card-body">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="../public/3.png" role="img"  preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+
+            <h3 class="my-3" ><b>Manufacturing Details</b></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li style="font-size:22px"><p id="message11"></p></li>
+              <li style="font-size:22px"><p id="message12"></p></li>
+              <li style="font-size:22px" ><p id="message6"></p></li>
+              <li style="font-size:22px"><p id="message7"></p></li>
+            </ul>
+        </div>
+        </div>
+        <div class="card mb-4 border-success">
+          <div class="card-header text-white bg-success border-success">
+            <h4 class="my-0 font-weight-normal">Quality Assurance</h4>
+          </div>
+          <div class="card-body">
+            <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="../public/2.png" role="img"  preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+
+            <h3 class="my-3" ><b>Quality Assurance</b></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li style="font-size:22px"><p id="message13"></p></li>
+              <li style="font-size:22px"><p id="message14"></p></li>
+              <li style="font-size:22px"><p id="message8"></p></li>
+              <li style="font-size:22px"><p id="message9"></p></li>
+              <li style="font-size:22px"><p id="message10"></p></li>
+            </ul>
+       
+          </div>
+        </div>
+      </div>
+
+
+<footer class="container">
+    <p class="float-end"><a href="#" class="btn btn-block btn-outline-success" role="button">Back to Top</a></p>
+    <p>&copy; 2020–2021 MedsParency</p>
+  </footer>
+    <script src="../public/js/tracking.js"></script>
+</body>
+
+</html>

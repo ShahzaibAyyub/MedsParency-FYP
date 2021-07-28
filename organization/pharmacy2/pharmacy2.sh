@@ -1,5 +1,3 @@
-//Reference: https://hyperledger-fabric.readthedocs.io/en/release-2.2/tutorial/commercial_paper.html
-
 #!/bin/bash
 #
 # SPDX-License-Identifier: Apache-2.0

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Raw Material Details</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../public/style.css">
+</head>
+
+
+
+<body>
+
+  <nav class="navbar navbar-expand navbar-dark bg-success fixed-top" aria-label="Second navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4" href="http://localhost:3000/Index">MedsParency</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02"
+        aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="http://localhost:3000/RawMaterial">Raw Material</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000/ManufacturingDetails">Manufacturing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000/QualityAssurance">Packaging</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000/tracking">Tracking</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="pricing-header pt-5 p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Login Page</h1>
+    <p class="fs-5 text-muted">Only <b>Storeman</b> can enter the Raw Material Details after Verifying</p>
+  </div>
+
+
+
+  <div class="container px-6 text-center">
+    <div class="mb-3  text-center ">
+      <form id="form">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-success">
+            <div class="card-header py-3 text-white bg-success border-success">
+              <h4 class="my-0 fw-normal">Enter Storeman (SM) Details</h4>
+            </div>
+            <div class="card-body">
+              <div class="form">
+                <div class="form-group text-left  mx-5">
+                  <label for="DrugID">Login ID</label>
+                  <input type="number" class="form-control" id="DrugID" placeholder="Enter Drug ID">
+              </div>
+              <div class="form-group text-left  mx-5">
+                  <label for="DrugName">Password</label>
+                  <input type="password" class="form-control" id="DrugName" placeholder="Enter Drug Name">
+              </div>
+              </form>
+              <button type="submit" id="b1" class="w-40 mx-5 btn btn-lg btn-outline-success">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <footer class="container">
+    <p class="float-end"><a href="#" class="btn btn-block btn-outline-success" role="button">Back to Top</a></p>
+    <p>&copy; 2020–2021 MedsParency</p>
+  </footer>
+
+  <script src="../public/js/app.js"></script>
+</body>
+
+</html>

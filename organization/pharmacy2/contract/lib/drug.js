@@ -1,8 +1,5 @@
-/*
- * Copyright IBM Corp. All Rights Reserved.
- *
- * SPDX-License-Identifier: Apache-2.0
-*/
+//Reference: https://hyperledger-fabric.readthedocs.io/en/release-2.2/tutorial/commercial_paper.html
+
 
 'use strict';
 
@@ -12,7 +9,7 @@ const State = require('./../ledger-api/state.js');
 
 /**
  *  class extends State class
- * Class will be used by application and smart contract to define a paper
+ * Class will be used by application and smart contract to define a drug
  */
 class Drug extends State {
 
@@ -49,7 +46,7 @@ class Drug extends State {
     }
 
     /**
-     * Deserialize a state data to commercial paper
+     * Deserialize a state data to drug
      * @param {Buffer} data to form back into the object
      */
     static deserialize(data) {
@@ -57,7 +54,7 @@ class Drug extends State {
     }
 
     /**
-     * Factory method to create a commercial paper object
+     * Factory method to create a drug
      */
     static createInstance(id, name) {
         return new Drug({ id, name });
